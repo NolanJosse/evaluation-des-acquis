@@ -1,5 +1,5 @@
 body {
-    height: 200vh;
+    min-height: 200vh;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -40,6 +40,10 @@ form {
     padding: 15px;
 }
 
+.hidden {
+    display: none;
+}
+
 button {
     padding: 10px 20px;
 }
@@ -55,4 +59,21 @@ button {
 
 .error {
     background: #ff9e9e;
+}
+
+footer {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    
+    height: 100px;
+    width: 100%;
+    
+    background: #f4c531;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
 }

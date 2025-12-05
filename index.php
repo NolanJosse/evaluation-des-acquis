@@ -26,29 +26,34 @@
 
         <img src="https://picsum.photos/200/150" alt="random">
 
-        <form method="POST">
-            <p>Nom : <input type="text" name="nom" required></p>
-            <p>Email : <input type="email" name="email" required></p>
+<form method="POST" id="contactForm"> <p>Nom : <input type="text" name="nom" id="nomInput" required></p>
+    <p>Email : <input type="email" name="email" id="emailInput" required></p>
 
-            <button type="submit">Validez</button>
+    <button type="submit">Validez</button>
 
-            <?php 
-                if (!empty($_POST)) {
+    <p class="message success hidden" id="successMessage">Votre demande est bien envoyée !</p>
+    <p class="message error hidden" id="errorMessage">Vos informations ne sont pas correctes</p>
+    
+</form>
 
-                    $nom = trim($_POST['nom']);
-                    $email = trim($_POST['email']);
-
-                    if ($nom !== "" && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                        echo '<p class="message success">Votre demande est bien envoyée !</p>';
-                    } else {
-                        echo '<p class="message error">Vos informations ne sont pas correctes</p>';
-                    }
-                }
-            ?>
-        </form>
+<script src="script.js"></script> 
 
     </div>
 </section>
 
+<?php
+$premier_prenom = "Clarisse";
+?>
+
+<footer>
+    <p>
+        Page web faite par "**<?php echo $premier_prenom; ?>**" appelé par une requête php du premier prenom du tableau.
+    </p>
+</footer>
+
+
+
 
 </body>
+
+</html>
