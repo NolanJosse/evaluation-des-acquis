@@ -23,4 +23,4 @@ document.addEventListener('DOMContentLoaded', function() {
             errorMsg.classList.remove('hidden');
         }
     });
-}); 
+}; 
