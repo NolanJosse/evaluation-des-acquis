@@ -11,19 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function validateEmail(email) {
 
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-        return re.test(String(email).toLowerCase());
-    }
-
-    form.addEventListener('submit', function(event) {
-        
-        event.preventDefault(); 
-
-        successMsg.classList.add('hidden');
-        errorMsg.classList.add('hidden');
-
-        const nomValue = nomInput.value.trim();
-        const emailValue = emailInput.value.trim();
 
         if (nomValue !== "" && validateEmail(emailValue)) {
             
@@ -36,4 +23,4 @@ document.addEventListener('DOMContentLoaded', function() {
             errorMsg.classList.remove('hidden');
         }
     });
-});
+}); 

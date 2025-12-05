@@ -41,15 +41,22 @@
     </div>
 </section>
 
-<?php
-$premier_prenom = "Clarisse";
-?>
-
-<footer>
-    <p>
-        Page web faite par "**<?php echo $premier_prenom; ?>**" appelé par une requête php du premier prenom du tableau.
-    </p>
-</footer>
+<p>Page web faite par nolan
+            <?php
+            require_once 'config.php'; 
+            try {
+                $sql = "SELECT prenom FROM user LIMIT 1";
+                $stmt = $pdo->query($sql);
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);              
+                if ($result && !empty($result['prenom'])) {
+                    echo htmlspecialchars($result['prenom']);
+                } else {
+                    echo "Auteur";
+                }             
+            } catch (PDOException $e) {
+                echo "Auteur";
+            }
+            ?>
 
 
 
